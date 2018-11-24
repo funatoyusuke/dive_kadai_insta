@@ -6,4 +6,6 @@ class User < ApplicationRecord
   has_many :pictures, dependent: :destroy
   has_many :favos, dependent: :destroy
   has_many :favo_pictures, through: :favos, source: :picture
+  
+  mount_uploader :iamge, ImageUploader
 end

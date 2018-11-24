@@ -8,20 +8,21 @@
           <tr>
             <td>
               <%= picture.user.name %>さんの投稿。
-            <td>
-            <td>
-              <p><%= image_tag(picture.image.url ,:size =>'480x480') %></p>
+            </td>
+            <td class="picture_info" >
+              <p><%= image_tag(picture.image.url ,:size => '280 x 280' ) %></p>
               <p><%= picture.content %></p>
               <%= link_to '詳細確認',picture_path(picture.id), class: 'btn btn-info' %>
               <% if picture.user_id == current_user.id %>
                 <%= link_to "編集する", edit_picture_path(picture.id) ,data: { confirm: '本当に編集していいですか？'}, class: 'btn btn-success'%>
                 <%= link_to '削除する', picture_path(picture.id), method: :delete,data: { confirm: '本当に削除していいですか？'}, class: 'btn btn-danger'%>
               <% end %> 
-             </td>
+            </td>
            </tr>
+         </div>
+       </div>
      <% end %>
      </table>
-    </div>
   </div>
 
 <div class="text-center">

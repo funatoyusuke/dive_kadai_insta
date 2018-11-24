@@ -35,11 +35,15 @@ class PicturesController < ApplicationController
   end
 
   def edit
+     if @picture.user_id != current_user.id
+      redirect_to  pictures_path, notice: "権限がありません"
+     end
   end
   
   def update
     if @picture.update(picture_params)
       redirect_to pictures_path, notice:"投稿を編集しました"
+      
     else
       render 'edit'
     end
@@ -50,6 +54,7 @@ class PicturesController < ApplicationController
     @picture.user_id = current_user.id
     render :new if @picture.invalid?
   end
+  
   
   private
     def picture_params

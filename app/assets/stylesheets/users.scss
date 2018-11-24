@@ -2,4 +2,20 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.user_info img{
+  border-radius: 50%;
+  border: inset 4px #ff0000;
+}
 
+.picture_info img{
+  border: inset 4px #ff0000;
+}
+
+body {
+  overflow: visible !important;
+  background: -webkit-linear-gradient(45deg, #FFFFCC 10%, #CCFF99 90%);
+  background: -moz-linear-gradient(45deg, #FFFFCC 10%, #CCFF99 90%);
+  background: -ms-linear-gradient(45deg, #FFFFCC 10%, #CCFF99 90%);
+  background: -o-linear-gradient(45deg, #FFFFCC 10%, #CCFF99 90%);
+  background: linear-gradient(45deg, #FFFFCC 10%, #CCFF99 90%);
+ }
