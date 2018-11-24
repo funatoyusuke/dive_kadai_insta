@@ -5,5 +5,5 @@ class Picture < ApplicationRecord
   has_many :favo_users, through: :favos, source: :user
 
   validates :image, presence: true
-  validates :content, presence: true, length: {maximum: 1000}
+  validates :content, presence: true, length: {maximum: 140}
 end
