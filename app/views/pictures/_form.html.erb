@@ -1,0 +1,25 @@
+<div class="container">
+<%= form_with(model: @picture, local: true ,url: choose_new_or_edit ) do |form| %>
+  <% if @picture.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @picture.errors.count %>件のエラーがあります。</h2>
+      <ul>
+      <% @picture.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+    <div class="field">
+    <%= image_tag(@picture.image.url , :size =>'480x480') if @picture.image.url %>
+    <p><%= form.file_field :image %></p>
+  </div>
+  <div class="field">
+       <%= form.label :コメント %><br>
+       <%= form.text_area :content ,:size=>"90x10" %>
+  </div>
+<%= form.submit name="送信する" %>
+<% end %>
+</div>
+<%= link_to "投稿一覧画面にもどる", pictures_path %>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Insta</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    
+    <div class="container">
+       <ul class="nav nav-tabs">
+         <% if user_signed_in? %>
+           <strong><li class="active">インスタクローン</li></strong>
+            <li role="presentation"><%= link_to "マイページ", current_user, class: "nav-link" %></li>
+            <li role="presentation"><%= link_to "新規投稿",new_picture_path, class: "nav-link" %></li>
+            <li role="presentation"><%= link_to "投稿一覧", pictures_path,class: "nav-link" %></li>
+            <li role="presentation"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link"%></li>
+          <% else %>
+            <li role="presentation"><%= link_to "新規登録", new_user_registration_path, class: "nav-link" %></li>
+            <li role="presentation"><%= link_to "ログイン", new_user_session_path, class: "nav-link"%></li>
+          <% end %>
+       </ul>
+    
+    <% if flash[:notice] %>
+      <div class="alert alert-info"><%= flash[:notice] %></div>
+    <% end %>
+    <% if flash[:alert] %>
+      <div class="alert alert-info"><%= flash[:alert] %></div>
+    <% end %>
+    
+      <%= yield %>
+    
+    </div>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<h1>お気に入り一覧</h1>
+
+
+<div class="container">
+  <% @favo_pictures.each do |favo| %>
+    <div class="row">
+      <table class="table table-hover">
+        <tr>
+          <td>
+            <%= favo.user.name %>さんの投稿。
+          <td>
+          <td>
+            <p><%= image_tag(favo.image.url , :size =>'480x480') if favo.image.url %></p>
+            <p><%= favo.content %></p>
+          </td>
+        </tr>
+      </table>
+    </div>
+</div>
+<% end %>
+
+         
