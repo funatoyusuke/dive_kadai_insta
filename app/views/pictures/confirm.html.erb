@@ -1,3 +1,4 @@
+<div class="mx-auto" style="width: 200px;">
 <h3>以下の内容で、送信する。</h3>
 
 <%= form_with(model: @picture, url: pictures_path, local: true) do |form| %>
@@ -5,7 +6,7 @@
   <%= form.hidden_field :image %>
 
   <p>コメント:<%= @picture.content %></p>
-  <p><%= image_tag(@picture.image.url ,:size =>'680x680') %></p>
+  <p><%= image_tag(@picture.image.url ,:size =>'280x280') %></p>
   <%= form.hidden_field :image_cache %>
  
   <%= form.submit  "送信する" %>
@@ -16,3 +17,4 @@
   <%= form.hidden_field :image_cache %>
   <%= form.submit "もどる",name: 'back' %>
 <% end %>
+</div>
