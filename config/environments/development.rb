@@ -47,6 +47,7 @@ Rails.application.configure do
   
   #herokuへのアップ
   config.serve_static_assets = true
+  config.assets.compile = true
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
