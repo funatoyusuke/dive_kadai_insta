@@ -10,7 +10,9 @@
 
   <body>
     
+    
     <div class="container">
+      <header>
        <ul class="nav nav-tabs">
          <% if user_signed_in? %>
            <strong><li class="active">インスタクローン</li></strong>
@@ -23,7 +25,7 @@
             <li role="presentation"><%= link_to "ログイン", new_user_session_path, class: "nav-link"%></li>
           <% end %>
        </ul>
-       
+       </header>
        
        <div class="jumbotron">
 　　　　 <h1 class="display-8"></h1>
